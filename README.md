@@ -6,7 +6,7 @@
 This app is a new learning platform for Developers 
 ---
 
-## Requerimets
+## Requerimet
 
 ---
 
