@@ -10,7 +10,7 @@ This app is a new learning platform for Developers
 
 ---
 
-## How to
+## How to create
 
 ---
 
