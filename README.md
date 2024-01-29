@@ -1,7 +1,7 @@
 # My-Elearning
 ---
 
-## Abaut the app
+## About the app
 
 This app is a new learning platform for Developers 
 ---
