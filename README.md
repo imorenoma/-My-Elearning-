@@ -1,4 +1,4 @@
-# -My-Elearning
+# My-Elearning
 ---
 
 ## Abaut the app
