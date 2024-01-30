@@ -1,0 +1,12 @@
+body{
+    
+    background-image: url(fuji.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+form{
+    background-color: white;
+    background-size: auto;
+}
+
