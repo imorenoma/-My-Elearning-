@@ -10,3 +10,8 @@ form{
     background-size: auto;
 }
 
+.top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
