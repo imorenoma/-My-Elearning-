@@ -1,7 +1,15 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+# views.py
+from django.shortcuts import render, redirect
+from .models import Usuario
+from .forms import RegistroUsuarioForm
 
-# Create your views here.
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = RegistroUsuarioForm(request.POST)
+        if form.is_valid():
+            nuevo_usuario = form.save()
+            return redirect('/')  
+    else:
+        form = RegistroUsuarioForm()
 
-def prueba(request):
-    return HttpResponse("<h3>probando<h3>")
+    return render(request, 'registro_usuario.html', {'form': form})
