@@ -14,11 +14,12 @@
     background-color: white;     
 }
 
-body{
-    background-image: url(img/landingbg.jpg);
-    background-color: rgba(255, 255, 255, 0.8);
+.dropdown{
+    background-color: #ccc;
 }
 
-.dropdown{
-    background-color: white;
+body{
+    background-image: url(img/landingbg.jpg);    
 }
+
+
