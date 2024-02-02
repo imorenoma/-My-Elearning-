@@ -1,10 +1,18 @@
 from django.shortcuts import render
 from .models import User, Register, Courses
+# from django.shortcuts import HttpResponseRedirect
 
 # Create your views here.
 
 def index(request):
     return render(request, 'myWeb/index.html')
+
+def register(request):
+    return render(request, 'myWeb/register.html')
+
+def cancel(request):
+    return render(request, 'myWeb/index.html')
+
 
 def create_user(request):
     if  request.method == "POST":
