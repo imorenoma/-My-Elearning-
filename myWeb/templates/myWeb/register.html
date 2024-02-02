@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Ivan Moreno Martin -->
+<html lang="es-ES">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title>Registry</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+		<div class="container">
+			<h2>Register form</h2>
+			<form action="...">
+				<div class="form-group">
+					<label for="name">Insert your Name</label>
+					<input type="text" id="name" class="form-control" name="user" required><br>
+				</div>
+
+				<div class="form-group">
+					<label for="surname">Insert your surname</label>
+					<input type="text" id="surname" class="form-control" name="Surname" required><br><br>
+				</div>
+
+				<div class="form-group">
+					<label for="pass1">Insert your passwd</label>
+					<input type="password" id="pass1" class="form-control" name="passwd" required><br><br>
+				</div>
+
+				<div class="form-group">
+					<label for="pass2">Repeat your passwd</label>
+					<input type="password" id="pass2" class="form-control" name="passwd" required><br><br>
+				</div>
+
+				<div class="form-group">
+					<label for="mail">Insert your email</label>
+					<input type="email" id="mail" class="form-control" name="email" required><br><br>
+				</div>
+
+				<div class="form-group">
+					<label for="tele">Insert your phone</label>
+					<input type="tel" id="tele"  class="form-control" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" value="123-123-123" required><br><br>
+				</div>				
+
+				<label for="term">Acept Terms and Conditions</label>
+				<input type="checkbox" id="term" name="terms" value="term"><br><br>
+
+				<input type="submit" value="Submit">
+			</form><br><br>
+
+			<form action="...">
+				<input type="submit" value="Cancel">
+			</form>
+		</div>
+	</body>
+</html>
