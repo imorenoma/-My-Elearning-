@@ -3,15 +3,6 @@ from django.db import models
 from django.utils import timezone
 
 
-<<<<<<< HEAD
-=======
-class Usuario(models.Model):
-    email = models.EmailField()
-    password = models.CharField(max_length=100) 
-
-
-
->>>>>>> master
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -26,9 +17,6 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-<<<<<<< HEAD
-        return self.title
-=======
         return self.title
     
 class User(models.Model):
@@ -43,4 +31,3 @@ class User(models.Model):
     def __str__(self):
         return self.username
     
->>>>>>> master

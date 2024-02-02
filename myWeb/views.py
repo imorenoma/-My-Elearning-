@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from django.shortcuts import render
 
-# Create your views here.
-=======
 from django.shortcuts import render, redirect
 
 from .models import User
@@ -95,4 +91,4 @@ def registro_view(request):
         form = RegistroForm()
 
     return render(request, 'registro.html', {'form': form})
->>>>>>> master
+
