@@ -18,14 +18,16 @@
             <div class = "container-fluid">
                 <div class="btn-group top-left" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-primary">About</button>
-                    <button type="button" class="btn btn-primary">Registry</button>
+                    <!-- <button type="button" class="btn btn-primary" href="resgister.html">Registry</button> -->
+                    <a href="{% url 'register' %}" class="btn btn-primary">Registry</a>
                     <button type="button" class="btn btn-primary">Contact</button>
                 </div>
             </div>
             <!-- Form section -->
             <div class="container">
                 <div class="row justify-content-center">
-                    <form method="post" action ="/" class= "narrow-form">
+                    <form method="post" action ="{% url 'login' %}" class= "narrow-form">
+                        {% csrf_token %}
                         <div class="mb-3">
                             <label for="InputEmail" class="form-label">Email address</label>
                             <div class="form-group col-xs-12">
@@ -41,6 +43,9 @@
                             <div class="text-center">                
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
+                            {% if error_message %}
+                                <p class="text-danger">{{ error_message }}</p>
+                            {% endif %}
                     </form>                    
                 </div>
             </div>
