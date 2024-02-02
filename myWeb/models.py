@@ -24,6 +24,8 @@ class Register(models.Model):
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
     email = models.EmailField()
+    passwd = models.CharField(max_length=100)
+    passwd2 = models.CharField(max_length=100)
     phone = models.IntegerField(
         validators=[
             MinValueValidator(limit_value=1),
