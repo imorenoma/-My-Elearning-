@@ -44,7 +44,7 @@
 
 				<div class="form-group">
 					<label for="tele">Insert your phone</label>
-					<input type="tel" id="tele"  class="form-control" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" value="123-123-123" required><br><br>
+					<input type="tel" id="tele"  class="form-control" name="telephone" pattern="[0-9]{9}" value="123456789" required><br><br>
 				</div>				
 
 				<label for="term">Acept Terms and Conditions</label>
@@ -53,7 +53,7 @@
 				<input type="submit" value="Submit">
 			</form><br><br>
 
-			<form action="...">
+			<form action="{% url 'cancel' %}" method="get">
 				<input type="submit" value="Cancel">
 			</form>
 		</div>
