@@ -12,7 +12,7 @@ def index(request):
 def loggin_form(request):
     if  request.method == "POST":
         email = request.POST['InputEmail']
-        password = request.POST["InputPassword1"]
+        password = request.POST['InputPassword1']
         user = authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
@@ -39,9 +39,10 @@ def create_user(request):
         course_id = request.POST.get('course_id')
         
         register =Register.objects.get(id=register_id)
-        course = Courses.objects.get(id=course_id)
+        course = Courses.objects.get(id=course_id)       
 
         user = User(register=register, course=course)
+        
         user.save()
 
         return redirect('index')
