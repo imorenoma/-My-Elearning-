@@ -19,11 +19,7 @@ def formulario_view(request):
         user = request.POST.get('user')
         phone = request.POST.get('phone')
 
-        # Verifica que todos los campos requeridos estén presentes
-        #if email and password and user and phone:
-            # Crea un nuevo objeto Usuario y guárdalo en la base de datos
-    #     User.objects.create(user=user, email=email,phone=phone, password=password, password2=password2)
-    # return render(request, 'formulario.html')
+       
         try:
             # Intenta crear un nuevo objeto Usuario y guárdalo en la base de datos
             User.objects.create(user=user, email=email, phone=phone, password=password, password2=password2)

@@ -19,10 +19,9 @@ from django.urls import path, include
 urlpatterns = [
     #path('', include('admin_material.urls')),
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-=======
+
     path('', include('myWeb.urls')),
->>>>>>> master
+
 ]
 
 
