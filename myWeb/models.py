@@ -42,8 +42,25 @@ class Courses(models.Model):
     )
     class_course_name = models.CharField(max_length=255)
 
-class User(models.Model):
-    Register = models.ForeignKey(Register, on_delete=models.CASCADE)
-    course = models.ForeignKey(Courses, on_delete= models.CASCADE)
+# class User(models.Model):
+#     Register = models.ForeignKey(Register, on_delete=models.CASCADE)
+#     course = models.ForeignKey(Courses, on_delete= models.CASCADE)
     # user_id = models.IntegerField()
     # user_mail = models.EmailField()
+
+
+
+
+#AHORA VOY A USAR LA CLASE USER QUE USO EN FORMULARIO
+class User(models.Model):
+    user = models.CharField(max_length=100)
+    email = models.EmailField(null=False, default=None)
+    
+    password2 = models.CharField(max_length=255, null=False, default=None)
+    phone = models.IntegerField(null=False, default=None)
+    password = models.CharField(max_length=255, null=False, default=None)  # Almacena la contraseña de manera segura, ¡asegúrate de usar algo como bcrypt en un entorno de producción!
+    # Otros campos si es necesario
+
+def __str__(self):
+    return self.username
+    

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from myWeb.views import index, register,cancel, loggin_form, landing_page
+from myWeb.views import index, register,cancel, loggin_form, landing_page, formulario_view
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,8 +26,10 @@ urlpatterns = [
     path('', index, name='index'),    
     path('login/', loggin_form, name='login'),
     path('landing/', landing_page, name='landing'),
+    path('formulario/', formulario_view, name='formulario'),
     path('register/', register, name='register'),
     path('register/cancel/', cancel, name='cancel'),
+    
     
 ]
 

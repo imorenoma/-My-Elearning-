@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from .models import User, Register, Courses
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from django.shortcuts import HttpResponseRedirect
-
+# from django.shortcuts import HttpResponseRedirect
+from django.db import IntegrityError
 # Create your views here.
 
 def index(request):
@@ -56,3 +56,43 @@ def create_user(request):
 
         return redirect('index')
     return render(request, "myWeb/Register.html")
+
+
+
+#FORMULARIO VIEW
+def formulario_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        password2 = request.POST.get('password2')
+        user = request.POST.get('user')
+        phone = request.POST.get('phone')
+
+       
+        try:
+            # Intenta crear un nuevo objeto Usuario y guárdalo en la base de datos
+            User.objects.create(user=user, email=email, phone=phone, password=password, password2=password2)
+
+        except IntegrityError as e:
+            # Captura la excepción IntegrityError y maneja el caso cuando se viola la restricción única
+            print("Error:", e)  # Agrega esta línea para imprimir el error
+            if 'UNIQUE constraint failed: myWeb_user.user' in str(e):
+                # Usuario ya existe, muestra un mensaje de error
+                error_message = "El usuario ya existe. Por favor, elija otro nombre de usuario."
+                return render(request, 'formulario.html', {'error_message': error_message})
+
+         
+            return render(request, 'formulario.html', {'error_message': "Error al procesar el formulario. Inténtalo de nuevo."})
+
+        # Redirige a alguna página después de enviar el formulario
+
+    return render(request, 'formulario.html')
+
+def envio_form(request):
+    if request.method == 'POST':
+        form = formulario_view(request.POST)
+        if form.is_valid():
+            form.save()  # Esto guardará el objeto en la base de datos si el formulario es válido
+            # Redirige a alguna página después de enviar el formulario
+
+    return render(request, 'formulario.html')
