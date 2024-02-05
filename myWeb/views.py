@@ -65,13 +65,13 @@ def formulario_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
-        user = request.POST.get('user')
+        #user = request.POST.get('user')
         phone = request.POST.get('phone')
 
        
         try:
             # Intenta crear un nuevo objeto Usuario y guárdalo en la base de datos
-            User.objects.create(user=user, email=email, phone=phone, password=password, password2=password2)
+            User.objects.create(email=email, phone=phone, password=password, password2=password2)
 
         except IntegrityError as e:
             # Captura la excepción IntegrityError y maneja el caso cuando se viola la restricción única
