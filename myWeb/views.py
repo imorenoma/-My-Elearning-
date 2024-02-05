@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import User, Register, Courses
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-# from django.shortcuts import HttpResponseRedirect
+from django.shortcuts import HttpResponseRedirect
 
 # Create your views here.
 
@@ -22,6 +22,15 @@ def loggin_form(request):
     else:
         error_message = ''
     return render(request, 'myWeb/index.html', {'error_message': error_message})
+
+def list_courses_dict(request):
+    course:{}
+    insert_courses = dict.update({'gcp': 'google cloud platform',  'introPy':'introduction to python'}, course)
+
+    list_courses = insert_courses.values()
+    return list_courses
+        
+
 
 
 def landing_page(request):
