@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Post(models.Model):
@@ -18,3 +19,48 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Register(models.Model):
+    name = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100)
+    email = models.EmailField()
+    passwd = models.CharField(max_length=100)
+    passwd2 = models.CharField(max_length=100)
+    phone = models.IntegerField(
+        validators=[
+            MinValueValidator(limit_value=1),
+            MaxValueValidator(limit_value=9)
+        ]
+    )
+
+class Courses(models.Model):
+    class_course_id = models.IntegerField(
+       validators=[
+            MinValueValidator(limit_value=1),
+            MaxValueValidator(limit_value=1000000)
+        ]   
+    )
+    class_course_name = models.CharField(max_length=255)
+
+# class User(models.Model):
+#     Register = models.ForeignKey(Register, on_delete=models.CASCADE)
+#     course = models.ForeignKey(Courses, on_delete= models.CASCADE)
+    # user_id = models.IntegerField()
+    # user_mail = models.EmailField()
+
+
+
+
+#AHORA VOY A USAR LA CLASE USER QUE USO EN FORMULARIO
+class User(models.Model):
+    user = models.CharField(max_length=100)
+    email = models.EmailField(null=False, default=None)
+    
+    password2 = models.CharField(max_length=255, null=False, default=None)
+    phone = models.IntegerField(null=False, default=None)
+    password = models.CharField(max_length=255, null=False, default=None)  # Almacena la contraseña de manera segura, ¡asegúrate de usar algo como bcrypt en un entorno de producción!
+    # Otros campos si es necesario
+
+def __str__(self):
+    return self.username
+    
