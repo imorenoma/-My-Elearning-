@@ -1,0 +1,59 @@
+body{
+    
+    background-image: url(img/fuji.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+form{
+    background-color: white;
+    background-size: auto;
+}
+
+.top-right{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.narrow-form{
+    max-width: 320px;
+    width: 120%;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.bottom-left{
+    position: absolute;
+    bottom: 0;
+}
+
+.card {
+    border: 0;
+    border-color: black;
+    width: 18rem;
+    margin-bottom: 1rem;
+    margin-left: 50px;    
+}
+
+#card1-image{
+    width: 110px;
+    height: 110px;
+}
+
+#card2-image{
+    width: 110px;
+    height: 110px;
+}
+
+#card3-image{
+    width: 110px;
+    height: 110px;
+}
+
+#card4-image{
+    width: 110px;
+    height: 110px;
+}
+
+
